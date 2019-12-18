@@ -15,12 +15,23 @@ We'll also pass strings with special symbols, such as "2A3*3a2", "2A3 3a2", and 
 
 */
 function checkPalindrome(){
+    //this function is executed when user starts typing
+    //this function checks if the entered text is Palindrome, and displays the result
+
+    //1- get text entered
     let text = document.getElementById("textInput").value;
-    let palcheck = removeNonAlphanumericChars(text);
-    let p = document.getElementById("result");
-    p.innerText = palcheck;
+
+    //2- les remove non-alpha-numeric characters from the entered text
+    let alphanumText = removeNonAlphanumericChars(text);
+
+    //3- lets check if 'alphanumText' is Palindrome
+    let result = isPalindrome(alphanumText);
+
+    //3- check if 'alphanumText' is palindrom, and display result
+    document.getElementById("result").innerText = result;
 }
 function removeNonAlphanumericChars(str){
+    //this function selects the alpha-numeric parts of 'str' and returns it lowerCase
     let regex = /[a-z0-9]/gi;
     return str.match(regex).join("").toLowerCase();
 }
