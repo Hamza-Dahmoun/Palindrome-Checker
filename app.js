@@ -35,4 +35,20 @@ function removeNonAlphanumericChars(str){
     let regex = /[a-z0-9]/gi;
     return str.match(regex).join("").toLowerCase();
 }
+function isPalindrome(str){
+    //this function checks if an alphanumeric text is palindrome, and return boolean value
+
+    //according to the definition of Palindrome word, we noticed that a word should have length even to be Palindome
+    if(str.length % 2 != 0){
+        return false;
+    }
+    else{
+        for(let i=0; i<str.length; i++){
+            if(str.charAt(i) != str.charAt(str.length-1-i)){
+                return false;
+            }
+        }
+        return true;
+    }
+}
 //removeNonAlphanumericChars("race CAR");
