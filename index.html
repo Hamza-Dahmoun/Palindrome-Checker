@@ -3,14 +3,20 @@
     <head>
         <script src="app.js"></script>
         <style>
+            body{
+                text-align:center;
+            }
         input{
             height:35px;
             border-radius: 2px;
             border:1px solid #efefef;
         }
+        p{
+            font-size: 20px;
+        }
         </style>
     </head>
     <body>
-        <input type="text" id="textInput" onkeyup="startWriting()" placeholder="Alpha-Numeric">
+        <input type="text" id="textInput" onkeyup="checkPalindrome()" placeholder="Alpha-Numeric">
     </body>
 </html>
