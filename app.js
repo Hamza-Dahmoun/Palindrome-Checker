@@ -17,12 +17,11 @@ We'll also pass strings with special symbols, such as "2A3*3a2", "2A3 3a2", and 
 function checkPalindrome(){
     let text = document.getElementById("textInput").value;
     let palcheck = removeNonAlphanumericChars(text);
-    let p = document.createElement("p");
+    let p = document.getElementById("result");
     p.innerText = palcheck;
-    document.body.appendChild(p);
 }
 function removeNonAlphanumericChars(str){
-    let regex = /\W/g;
-    return regex.match(str).join("");
+    let regex = /[a-z0-9]/gi;
+    return str.match(regex).join("").toLowerCase();
 }
 //removeNonAlphanumericChars("race CAR");
