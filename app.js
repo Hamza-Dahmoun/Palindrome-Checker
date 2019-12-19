@@ -14,7 +14,7 @@ We'll pass strings with varying formats, such as "racecar", "RaceCar", and "race
 We'll also pass strings with special symbols, such as "2A3*3a2", "2A3 3a2", and "2_A3*3#A2".
 
 */
-function checkPalindrome(){
+function checkPalindrome() {
     //this function is executed when user starts typing
     //this function checks if the entered text is Palindrome, and displays the result
 
@@ -30,25 +30,19 @@ function checkPalindrome(){
     //3- check if 'alphanumText' is palindrom, and display result
     document.getElementById("result").innerText = result;
 }
-function removeNonAlphanumericChars(str){
+function removeNonAlphanumericChars(str) {
     //this function selects the alpha-numeric parts of 'str' and returns it lowerCase
     let regex = /[a-z0-9]/gi;
     return str.match(regex).join("").toLowerCase();
 }
-function isPalindrome(str){
+function isPalindrome(str) {
     //this function checks if an alphanumeric text is palindrome, and return boolean value
 
-    //according to the definition of Palindrome word, we noticed that a word should have length even to be Palindome
-    if(str.length % 2 != 0){
-        return false;
-    }
-    else{
-        for(let i=0; i<str.length; i++){
-            if(str.charAt(i) != str.charAt(str.length-1-i)){
-                return false;
-            }
+    for (let i = 0; i < Math.floor(str.length/2); i++) {
+        if (str.charAt(i) != str.charAt(str.length - 1 - i)) {
+            return false;
         }
-        return true;
     }
+    return true;
 }
 //removeNonAlphanumericChars("race CAR");
